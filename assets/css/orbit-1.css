@@ -291,3 +291,76 @@ p {
     margin-bottom: 0;
   }
 }
+/* Base styles for entire project container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow projects to wrap on smaller screens */
+  padding: 20px;
+  font-family: sans-serif; /* Replace with your preferred font family */
+}
+
+/* Individual project styles */
+.project {
+  margin: 10px; /* Add spacing between projects */
+  border: 1px solid #eee; /* Optional border for separation */
+  padding: 15px;
+  border-radius: 5px; /* Subtle rounded corners */
+}
+
+/* Project titles */
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.project-title a {
+  color: #333; /* Adjust link color */
+  text-decoration: none;
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+}
+
+/* Project descriptions */
+.project-description {
+  font-size: 16px;
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Project details sections */
+.project-details {
+  margin-top: 10px;
+}
+
+/* Headings within project details */
+.project-details h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Lists within project details */
+.project-details ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.project-details li {
+  margin-bottom: 5px;
+}
+
+/* Emphasize key achievements */
+.project-details li strong {
+  font-weight: bold;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens as needed */
+  .project {
+    width: 100%; /* Make projects full-width on mobile */
+  }
+}
