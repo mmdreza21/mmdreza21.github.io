@@ -221,26 +221,27 @@ body {
     margin-bottom: 15px;
   }
   
-  .skillset .item {
-    margin-bottom: 15px;
-    overflow: hidden;
-  }
-  .skillset .level-title {
-    font-size: 14px;
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-  .skillset .level-bar {
-    height: 12px;
-    background: #f5f5f5;
-    border-radius: 2px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-  }
-  .skillset .theme-progress-bar {
-    background: #68bacd;
-  }
+  .skillset {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;;
+}
+
+.skillset .level-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.skillset ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    padding-right: 2rem;
+}
+
+.skillset ul li {
+    margin-bottom: 0.3em;
+}
   
   .footer {
     padding: 30px;
