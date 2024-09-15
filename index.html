@@ -2,254 +2,398 @@
 <html lang="en">
 
 <head>
-    <title>Mohammad reza javadi</title>
+    <title>Mohammad Reza Javadi - Full Stack Developer</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="mohamad reza javady">
-    <meta name="author" content="Mohammad reza javadi">
+    <meta name="description" content="Resume of Mohammad Reza Javadi">
+    <meta name="author" content="Mohammad Reza Javadi">
     <link rel="shortcut icon" href="favicon.ico">
-    <!-- Google Font -->
-    <link
-        href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
-        rel='stylesheet' type='text/css'>
-    <!-- FontAwesome JS-->
-    <script defer src="assets/fontawesome/js/all.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap' rel='stylesheet'
+        type='text/css'>
+
+    <!-- FontAwesome -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="assets/css/orbit-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        header h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 15px;
+            color: #d1eaff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid #007bff;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+            margin-left: 30px;
+        }
+
+        .profile-info h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .profile-info h2 {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #007bff;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+            margin-top: 30px !important;
+
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #007bff;
+        }
+
+        /* Contact Info */
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            gap: 20px;
+        }
+
+        .contact-list li {
+            font-size: 1.2rem;
+        }
+
+        .contact-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Layouts */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* Summary Section */
+        .summary p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* Education & Experience */
+        .item {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+            margin-top: 20px;
+        }
+
+        .item:hover {
+            transform: translateY(-5px);
+        }
+
+        .degree,
+        .company,
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #007bff;
+        }
+
+        .time {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Skills */
+        .skillset ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skillset li {
+            background-color: #4660f1;
+            color: #007bff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .skillset li:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .badge {
+
+
+            transition: background-color 0.3s;
+        }
+
+        .badge a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .badge a:hover {
+            /* background-color: #3498db; */
+            color: #fff;
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="wrapper mt-lg-5">
-        <div class="sidebar-wrapper">
-            <div class="profile-container">
-                <img class="profile" src="assets/images/profile.JPG" alt="" />
-                <h1 class="name">Mohammad Reza Javadi</h1>
-                <h3 class="tagline">Full Stack Programmer</h3>
-            </div><!--//profile-container-->
 
-            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-                    <li class="email"><i class="fa-solid fa-envelope"></i><a
-                            href="mailto: mrezaj11@live.com">mrezaj11@live.com</a></li>
-                    <li class="phone"><i class="fa-solid fa-phone"></i><a href="tel:+989935560310">+989935560310</a>
-                    </li>
-                    <!--                    <li class="website"><i class="fa-solid fa-globe"></i><a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-Programmers/" target="_blank">portfoliosite.com</a></li>-->
-                    <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a
-                            href="http://linkedin.com/in/mamadreza1998" target="_blank">linkedin:mamadreza1998</a></li>
-                    <li class="github"><i class="fa-brands fa-github"></i><a href="https://github.com/mmdreza21"
-                            target="_blank">github.com/mmdreza21</a></li>
-                    <li class="whats-app"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/+989935560310"
-                            target="_blank">My WhatsApp</a></li>
-                </ul>
-            </div><!--//contact-container-->
-            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
+    <header>
+        <h1>Mohammad Reza Javadi</h1>
+        <h3>Full Stack Developer | Problem Solver</h3>
+    </header>
+
+    <div class="container">
+
+        <!-- Profile Section -->
+        <div class="profile-container">
+            <img src="assets/images/profile.JPG" alt="Profile Picture" />
+            <div class="profile-info">
+                <h1>Mohammad Reza Javadi</h1>
+                <h2>Full Stack Developer</h2>
+                <p>I am passionate about building efficient, scalable, and beautiful web applications using modern web
+                    technologies.</p>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <section>
+            <h2 class="section-title">Contact Information</h2>
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:mrezaj11@live.com">mrezaj11@live.com</a></li>
+                <li><i class="fa-solid fa-phone"></i> <a href="tel:+989935560310">+98 993 556 0310</a></li>
+                <li><i class="fa-brands fa-linkedin-in"></i> <a href="http://linkedin.com/in/mamadreza1998"
+                        target="_blank">LinkedIn</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/mmdreza21"
+                        target="_blank">GitHub</a></li>
+            </ul>
+        </section>
+
+        <!-- Career Profile Section -->
+        <section>
+            <h2 class="section-title">Career Profile</h2>
+            <div class="summary">
+                <p>As a full-stack developer with a passion for problem-solving, I have developed websites and
+                    applications that serve user needs. My work spans from backend architecture to the front-end
+                    experience, ensuring clean, maintainable, and scalable solutions.</p>
+            </div>
+        </section>
+
+        <!-- Education and Experience -->
+        <div class="grid-container">
+
+            <!-- Education -->
+            <section>
+                <h2 class="section-title">Education</h2>
                 <div class="item">
-                    <h4 class="degree">Mechanical engineering</h4>
-                    <h5 class="meta">Azad university of karaj</h5>
+                    <h3 class="degree">Mechanical Engineering</h3>
+                    <p>Azad University of Karaj</p>
                     <div class="time">2016 - 2020</div>
-                </div><!--//item-->
-                <div class="item">
-                    <h4 class="degree">IT</h4>
-                    <h5 class="meta">Payamnoor karaj university</h5>
-                    <div class="time">2020-present</div>
-                </div><!--//item-->
-            </div><!--//education-container-->
-
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Turkish <span class="lang-desc">(Native)</span></li>
-                    <li>Persian <span class="lang-desc">(Professional)</span></li>
-                    <li>English <span class="lang-desc">(B2)</span></li>
-                </ul>
-            </div><!--//interests-->
-
-            <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>Learning Code</li>
-                    <li>Hiking</li>
-                    <li>Gaming</li>
-                </ul>
-            </div><!--//interests-->
-
-        </div><!--//sidebar-wrapper-->
-
-        <div class="main-wrapper">
-
-            <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-user"></i></span>Career
-                    Profile</h2>
-                <div class="summary">
-                    <p>
-                        some years ago a magic happened in my life, it was coding and programing, very soon it started
-                        to become my career. And what a lovely career..
-                        I love challenges in my career. Solving challenges in the best way and finding creative
-                        solutions is my pleasure.
-                        Solving problems increases your resourcefulness. The more problems you solve, the better you get
-                        at problem solving.
-                        In last recent years i'v been learning most of the time. often self-study.
-                        Passing time doesn't make sense to me when i'm coding or learning new skills.
-                    </p>
-                </div><!--//summary-->
-            </section><!--//section-->
-
-            <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i
-                            class="fa-solid fa-briefcase"></i></span>Experiences</h2>
-
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Full Stack Programmer (Heavy frontEnd)</h3>
-                            <div class="time">2019 - Present</div>
-                        </div><!--//upper-row-->
-                        <div class="company">Startup Sadra Tech Iran</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p>
-                            Sadra Tech is a startup company that helps iranian traders.
-                            I am working in position of fullStack on three website in this company and helping others to
-                            develop the website`s.
-                        </p>
-                    </div><!--//details-->
-                </div><!--//item-->
-
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Full Stack Programmer (intern) </h3>
-                            <div class="time">2018-2019 </div>
-                        </div><!--//upper-row-->
-                        <div class="company">3soot web Iran</div>
-                    </div><!--//meta-->
-                    <div class="details">
-                        <p></p>
-                    </div><!--//details-->
-                </div><!--//item-->
-
-            </section><!--//section-->
-            <section class="skills-section section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-rocket"></i></span>Skills
-                    &amp; Proficiency</h2>
-                <h2 class="level-title">Skills & Proficiency</h2>
-                <div class="skillset">
-                    <ul>
-
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>Vue &amp; Nuxt</li>
-                        <li>HTML5 &amp; CSS</li>
-                        <li>Node.js &amp; Express.js &amp; Nest.js</li>
-                        <li>RESTful API</li>
-                    </ul>
-                    <ul>
-                        <li>Linux</li>
-                        <li><a href="https://voorivex.academy/certificates/123mmdreza/owasp-exam/">OWASP </a><a
-                                href="https://voorivex.academy/profile/123mmdreza/">(Secure coding practices)</a>
-                        </li>
-                        <li>C#</li>
-                        <li>MongoDB (NoSQL Database)</li>
-                        <li>MySQL (SQL Database)</li>
-                        <!-- <li>Angular</li> -->
-                    </ul>
                 </div>
-
+                <div class="item">
+                    <h3 class="degree">Information Technology</h3>
+                    <p>Payamnoor Karaj University</p>
+                    <div class="time">2021 - Present</div>
+                </div>
             </section>
-            <br>
-            <br>
-            <br>
-            <br>
-            <section class="section projects-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-archive"></i></span>Projects
-                </h2>
-                <div class="">
 
-                    <div class="project">
-                        <h2 class="project-title"><a href="https://cyclicalwaves.com/">Unified Trading Platforms for
-                                Analysis and Community Engagement</a></h2>
-                        <p class="project-description">
-                            I developed three trading platforms—<a href="https://tahlilapp.com">Tahlilapp</a>, <a
-                                href="https://bitnical.com">Bitnical</a>, and <a href="https://cycfx.com">Cycfx</a>—to
-                            meet traders' needs for information, analysis, and community interaction. These platforms
-                            provide user-friendly interfaces and advanced financial data visualization. Tahlilapp offers
-                            charting, video streaming, and community features in Farsi using Vue & Nuxt and TradingView.
-                            Bitnical is a full-stack app for on-chain data analysis with a Node.js (Express) backend,
-                            MongoDB, and Nuxt.js frontend. Cycfx enhances forex trading with a responsive design and
-                            interactive UI, developed in Vue. I led front-end development, integrated third-party
-                            services, and collaborated with backend teams, ensuring seamless data flow and user
-                            engagement.</p>
-                        <div class="project-details">
-
-                            <!--                         <ul>
-                          <li>Vue & Nuxt for landing pages, login, profiles, and data tables</li>
-                          <li>TradingView charting for market data visualization</li>
-                          <li>Video streaming functionality for expert analyses</li>
-                          <li>Built-in community features for connection and sharing</li>
-                          <li>Led front-end development for all devices</li>
-                          <li>Integrated third-party services (charting, video streaming)</li>
-                          <li>Collaborated with back-end team for smooth data flow</li>
-                        </ul> -->
-                        </div>
-                    </div>
-
-                    <!--                     <div class="project">
-                      <h2 class="project-title"><a href="https://bitnical.com">Bitnical</a></h2>
-                      <p class="project-description">
-                        Traders needed a platform for on-chain data, charts, and expert analysis. This full-stack application offers a dynamic frontend and unique on-chain insights.
-                      </p>
-                      <div class="project-details">
-                          
-                        <ul>
-                          <li>Node.js (Express) backend with MongoDB database and REST APIs</li>
-                          <li>Nuxt.js frontend for a performant experience</li>
-                          <li>Unique "On-chain" page leveraging on-chain data for deeper insights</li>
-                          <li>Swagger documentation and automated tasks (cron jobs) in On-chain section</li>
-                          <li>Designed and built the "On-chain" page</li>
-                          <li>Managed deployment and ongoing maintenance</li>
-                        </ul>
-                        
-                      </div>
-                    </div>
-                  
-                    <div class="project">
-                      <h2 class="project-title"><a href="https://cycfx.com">Cycfx</a></h2>
-                      <p class="project-description">
-                        Forex traders needed a visually appealing and informative platform for news and analysis. I enhanced Cycfx.com with a responsive design, engaging home page, and interactive UI elements.
-                      </p>
-                      <div class="project-details">
-                        <ul>
-                          <li>Responsive design for optimal viewing on all devices</li>
-                          <li>Engaging home page video and article sections (Vue)</li>
-                          <li>Designed and developed key UI components for the home page</li>
-                          <li>Implemented interactive features using modern web technologies</li>
-                          <li>Collaborated with design team to maintain visual consistency</li>
-                        </ul>
-                      </div>
-                    </div> -->
-
+            <!-- Experience -->
+            <section>
+                <h2 class="section-title">Experience</h2>
+                <div class="item">
+                    <h3 class="job-title">Front-End Developer</h3>
+                    <p>3soot Web Iran</p>
+                    <div class="time">2020 - 2022</div>
                 </div>
+                <div class="item">
+                    <h3 class="job-title">Full Stack Developer</h3>
+                    <a href="https://cyclicalwaves.com/" target="_blank">Sadra Tech</a>
+                    <div class="time">2022 - Present</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Skills Section -->
+        <!-- Skills Section -->
+        <section>
+            <h2 class="section-title">Skills</h2>
+            <div class="skillset">
+                <ul>
+                    <li><span class="badge">JavaScript</span></li>
+                    <li><span class="badge">TypeScript</span></li>
+                    <li><span class="badge">Vue & Nuxt</span></li>
+                    <li><span class="badge">HTML5 & CSS</span></li>
+                    <li><span class="badge">Node.js</span></li>
+                    <li><span class="badge">Express.js & Nest.js</span></li>
+                    <li><span class="badge">RESTful API</span></li>
+                </ul>
+                <ul>
+                    <li><span class="badge">Linux</span></li>
+                    <li><span class="badge">C#</span></li>
+                    <li><span class="badge">MongoDB</span></li>
+                    <li><span class="badge">MySQL</span></li>
+                    <li>
+                        <span class="badge">
+                            <a href="https://voorivex.academy/certificates/123mmdreza/owasp-exam/"
+                                target="_blank">OWASP</a>
+                            (<a href="https://voorivex.academy/profile/123mmdreza/" target="_blank">Secure coding
+                                practices</a>)
+                            <img src="assets/click.svg" style="max-width: 18px;" alt="click">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
 
+        <!-- Projects Section -->
+        <section>
+            <h2 class="section-title">Projects</h2>
+            <div class="item">
+                <h3 class="project-title">
+                    <a href="https://cyclicalwaves.com/" target="_blank">Unified Trading Platforms for Analysis and
+                        Community Engagement</a>
+                </h3>
+                <p>
+                    I developed three platforms—
+                    <a href="https://tahlilapp.com" target="_blank">Tahlilapp</a>,
+                    <a href="https://bitnical.com" target="_blank">Bitnical</a>, and
+                    <a href="https://cycfx.com" target="_blank">Cycfx</a>—to provide users with powerful analysis tools
+                    and community features.
+                    Led front-end development using Vue & Nuxt, integrated third-party services, and collaborated with
+                    backend teams for seamless data flow.
+                </p>
+            </div>
+        </section>
 
-            </section><!--//section-->
+    </div><!--//container-->
 
-
-
-        </div><!--//main-body-->
-    </div>
-
+    <!-- Footer -->
     <footer class="footer">
-        <div class="text-center">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-        </div><!--//container-->
-    </footer><!--//footer-->
+        <p>&copy; 2024 Mohammad Reza Javadi. All rights reserved.</p>
+    </footer>
 
 </body>
 
