@@ -1,16 +1,17 @@
 
-        :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --primary-dark: #1d4ed8;
-            --secondary: #64748b;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --accent: #10b981;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
+:root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --secondary: #64748b;
+    --light: #f8fafc;
+    --dark: #0f172a;
+    --accent: #10b981;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 
         * {
             margin: 0;
@@ -482,3 +483,78 @@
             animation: fadeIn 0.6s ease-out forwards;
             animation-delay: 0.1s;
         }
+
+
+        .skill-level {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.skill-level .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.skill-level.pro .dot {
+    background-color: #22c55e;
+}
+
+.skill-level.mid .dot {
+    background-color: #3b82f6;
+}
+
+.skill-level.hobby .dot {
+    background-color: #64748b;
+}
+
+.level-text {
+    font-size: 0.75rem;
+    color: var(--secondary);
+    margin-left: 6px;
+}
+
+.skill-tag {
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+/* Professional */
+.skill-tag.pro {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Mid */
+.skill-tag.mid {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Hobby */
+.skill-tag.hobby {
+    background-color: rgba(100, 116, 139, 0.15);
+    color: #64748b;
+    border-color: rgba(100, 116, 139, 0.4);
+}
+
+/* Hover (subtle) */
+.skill-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.skill-level-legend{
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
