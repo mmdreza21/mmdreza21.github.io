@@ -15,6 +15,162 @@
     <link rel="stylesheet" href="./assets/css/skill-levels.css">
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <style>
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Game Card Features */
+        .game-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0 12px 0;
+        }
+
+        .game-features span {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #a78bfa;
+        }
+
+        .game-date {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        /* Upcoming Game Card */
+        .game-card.upcoming {
+            border: 2px dashed #7c3aed40;
+            opacity: 0.8;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Tech Badges at Top */
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 16px 0 24px 0;
+        }
+
+        .tech-badges span {
+            background: rgba(124, 58, 237, 0.08);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #a78bfa;
+        }
+
+        .tech-badges span i {
+            margin-right: 6px;
+        }
+
+        /* Game Dev Process */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .process-item {
+            background: rgba(124, 58, 237, 0.05);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .process-item .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .process-item h4 {
+            color: white;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .process-item p {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0;
+        }
+
+        /* Game Stats */
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #a78bfa;
+            display: block;
+        }
+
+        .stat-item .label {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-stats {
+                gap: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -24,6 +180,16 @@
             <h1>Mohammad Reza Javadi</h1>
             <p class="subtitle">Unity & C# Game Developer</p>
         </header>
+
+        <!-- Tech Badges -->
+        <div class="tech-badges">
+            <span><i class="fa-brands fa-unity"></i> Unity</span>
+            <span><i class="fa-solid fa-code"></i> C#</span>
+            <span><i class="fa-solid fa-globe"></i> WebGL</span>
+            <span><i class="fa-solid fa-gamepad"></i> Game Design</span>
+            <span><i class="fa-solid fa-cubes"></i> 3D Physics</span>
+            <span><i class="fa-solid fa-robot"></i> AI Behaviors</span>
+        </div>
 
         <!-- Profile -->
         <div class="profile-row">
@@ -57,8 +223,32 @@
                     <a href="https://mmdreza21.vercel.app/games" target="_blank" class="contact-item highlight">
                         <i class="fa-solid fa-gamepad"></i> Live Games
                     </a>
+                    <a href="assets/resume.pdf" download class="contact-item"
+                        style="background: #7c3aed20; border: 1px solid #7c3aed;">
+                        <i class="fa-solid fa-file-pdf"></i> Download CV
+                    </a>
                 </div>
             </section>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="number">5</span>
+                <span class="label">Unity Games</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">10+</span>
+                <span class="label">Game Levels</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">3</span>
+                <span class="label">WebGL Builds</span>
+            </div>
+            <div class="stat-item">
+                <span class="number">4+</span>
+                <span class="label">Years Experience</span>
+            </div>
         </div>
 
         <!-- Games Portfolio -->
@@ -69,10 +259,17 @@
                 <div class="game-card">
                     <h3>Echoes of Eldoria</h3>
                     <span class="game-genre">Action RPG</span>
+                    <span class="game-date">Completed: Jan 2024</span>
                     <p>
                         2D top-down action RPG with real-time combat, inventory system, seamless scene
                         transitions, and bullet-hell encounters.
                     </p>
+                    <div class="game-features">
+                        <span>✅ Real-time combat</span>
+                        <span>✅ Inventory system</span>
+                        <span>✅ 5+ levels</span>
+                        <span>✅ Boss fights</span>
+                    </div>
                     <div class="game-tech">
                         <span>Unity</span>
                         <span>C#</span>
@@ -88,10 +285,17 @@
                 <div class="game-card">
                     <h3>Rocket Booster</h3>
                     <span class="game-genre">Physics • Space • Arcade</span>
+                    <span class="game-date">Completed: Nov 2023</span>
                     <p>
                         Physics-based 3D space flight game. Pilot your rocket through difficult levels,
                         controlling thrust and rotation while avoiding hazards.
                     </p>
+                    <div class="game-features">
+                        <span>✅ 3D Physics</span>
+                        <span>✅ 10+ levels</span>
+                        <span>✅ Realistic controls</span>
+                        <span>✅ Particle effects</span>
+                    </div>
                     <div class="game-tech">
                         <span>Unity</span>
                         <span>C#</span>
@@ -107,10 +311,17 @@
                 <div class="game-card">
                     <h3>The Valkyrie</h3>
                     <span class="game-genre">Platformer • Action-Adventure</span>
+                    <span class="game-date">Completed: Sep 2023</span>
                     <p>
                         2D action-adventure platformer with handcrafted levels, platforming challenges,
                         enemy combat, and smooth movement mechanics.
                     </p>
+                    <div class="game-features">
+                        <span>✅ Smooth movement</span>
+                        <span>✅ Enemy AI</span>
+                        <span>✅ 8+ levels</span>
+                        <span>✅ Collectibles</span>
+                    </div>
                     <div class="game-tech">
                         <span>Unity</span>
                         <span>C#</span>
@@ -125,10 +336,17 @@
                 <div class="game-card">
                     <h3>Tilemania</h3>
                     <span class="game-genre">Platformer • Action • Adventure</span>
+                    <span class="game-date">Completed: Jul 2023</span>
                     <p>
                         2D platformer with classic tile-based level design. Master challenging sequences,
                         climb ladders, avoid hazards, collect coins, and defeat enemies.
                     </p>
+                    <div class="game-features">
+                        <span>✅ Tile-based levels</span>
+                        <span>✅ 12+ levels</span>
+                        <span>✅ Multiple enemies</span>
+                        <span>✅ Coin collection</span>
+                    </div>
                     <div class="game-tech">
                         <span>Unity</span>
                         <span>C#</span>
@@ -144,11 +362,18 @@
                 <div class="game-card">
                     <h3>Star Blaster</h3>
                     <span class="game-genre">Shooter • Arcade • 3D Environment</span>
+                    <span class="game-date">Completed: May 2023</span>
                     <p>
                         Fast-paced space shooter set in a 3D environment with 2D movement mechanics.
                         Dodge enemy fire, destroy waves of ships, and survive in an arcade-style experience
                         with immersive 3D visuals.
                     </p>
+                    <div class="game-features">
+                        <span>✅ 3D visuals</span>
+                        <span>✅ Wave system</span>
+                        <span>✅ Power-ups</span>
+                        <span>✅ High scores</span>
+                    </div>
                     <div class="game-tech">
                         <span>Unity</span>
                         <span>C#</span>
@@ -159,6 +384,53 @@
                     <a href="https://mmdreza21.vercel.app/games/StarBlaster" target="_blank" class="game-link">
                         Play Now <i class="fa-solid fa-arrow-right"></i>
                     </a>
+                </div>
+
+                <!-- Upcoming Game -->
+                <div class="game-card upcoming">
+                    <div class="coming-soon-badge">🔨 In Development</div>
+                    <h3>Cyberpunk Runner</h3>
+                    <span class="game-genre">Endless Runner • Cyberpunk</span>
+                    <p>
+                        Fast-paced endless runner set in a neon cyberpunk city. Dodge obstacles,
+                        collect power-ups, and survive as long as possible in this immersive 3D experience.
+                    </p>
+                    <div class="game-tech">
+                        <span>Unity</span>
+                        <span>C#</span>
+                        <span>Procedural Generation</span>
+                        <span>Post-Processing</span>
+                    </div>
+                    <span style="color: #888; font-size: 0.85rem;">Coming soon...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Development Process -->
+        <section class="section">
+            <h2 class="section-title">⚙️ Game Development Process</h2>
+            <div class="card">
+                <div class="process-grid">
+                    <div class="process-item">
+                        <span class="icon">🎯</span>
+                        <h4>Prototyping</h4>
+                        <p>Rapid iteration on game mechanics and core loops</p>
+                    </div>
+                    <div class="process-item">
+                        <span class="icon">💻</span>
+                        <h4>Gameplay Programming</h4>
+                        <p>Clean, maintainable C# code with design patterns</p>
+                    </div>
+                    <div class="process-item">
+                        <span class="icon">⚡</span>
+                        <h4>Performance Optimization</h4>
+                        <p>Profiling and optimization for WebGL builds</p>
+                    </div>
+                    <div class="process-item">
+                        <span class="icon">🧪</span>
+                        <h4>Testing & Polish</h4>
+                        <p>Playtesting and refinement for smooth experience</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -287,7 +559,6 @@
         </section>
 
         <!-- Projects -->
-        <!-- Projects -->
         <section class="section">
             <h2 class="section-title">Projects</h2>
 
@@ -407,6 +678,8 @@
                 <a href="https://github.com/mmdreza21" target="_blank">GitHub</a>
                 <span class="separator">•</span>
                 <a href="https://linkedin.com/in/mamadreza1998" target="_blank">LinkedIn</a>
+                <span class="separator">•</span>
+                <a href="assets/resume.pdf" download>Download CV</a>
             </p>
         </footer>
 
