@@ -13,38 +13,40 @@
     }
 
     body {
-      background: #f1f5f9;
+      background: #0b0f1a;
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       padding: 2rem 1rem;
-      color: #0f172a;
+      color: #e5edf5;
       line-height: 1.6;
     }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      background: white;
+      background: #141a26;
       border-radius: 2rem;
       padding: 2rem 2.5rem;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      border: 1px solid #2b3648;
     }
 
     h1 {
       font-size: 2.2rem;
       font-weight: 600;
-      border-bottom: 4px solid #e2e8f0;
+      border-bottom: 4px solid #2b3a4e;
       padding-bottom: 0.5rem;
       margin-bottom: 2rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
+      color: #f0f7ff;
     }
 
     h1 small {
       font-size: 1rem;
       font-weight: 400;
-      color: #475569;
+      color: #9bb5d4;
       margin-left: 0.5rem;
     }
 
@@ -54,8 +56,8 @@
       margin-top: 2.2rem;
       margin-bottom: 1rem;
       padding-bottom: 0.3rem;
-      border-bottom: 2px dashed #cbd5e1;
-      color: #0f172a;
+      border-bottom: 2px dashed #2f4057;
+      color: #d6e6ff;
     }
 
     h3 {
@@ -63,8 +65,8 @@
       font-weight: 600;
       margin-top: 1.6rem;
       margin-bottom: 0.3rem;
-      color: #1e293b;
-      background: #f1f5f9;
+      color: #c4d9f5;
+      background: #1e2a3a;
       padding: 0.1rem 1rem 0.1rem 0.8rem;
       border-radius: 0 20px 20px 0;
       border-left: 5px solid #3b82f6;
@@ -84,59 +86,68 @@
       gap: 0.5rem 1.5rem;
       padding: 0.6rem 0.8rem;
       border-radius: 12px;
-      background: #fafcff;
-      border-left: 3px solid #dbeafe;
+      background: #101723;
+      border-left: 3px solid #2a3f5a;
       align-items: start;
+      transition: background 0.2s;
+    }
+
+    .qa-item:hover {
+      background: #1a2536;
+      border-left-color: #3b82f6;
     }
 
     .qa-item .q {
       font-weight: 600;
-      color: #0b2b4a;
+      color: #b6d0f0;
       font-size: 0.98rem;
       padding-top: 0.1rem;
     }
 
     .qa-item .q::before {
       content: "Q: ";
-      color: #2563eb;
+      color: #5f9eff;
       font-weight: 700;
     }
 
     .qa-item .a {
-      color: #1e293b;
+      color: #d6e5f5;
       font-size: 0.97rem;
     }
 
     .qa-item .a::before {
       content: "A: ";
-      color: #0b5e4b;
+      color: #5cc4a0;
       font-weight: 600;
     }
 
     .qa-item .a code,
     .inline-code {
-      background: #eef2f6;
+      background: #1f2b3d;
       padding: 0.05rem 0.5rem;
       border-radius: 12px;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
       font-size: 0.85rem;
-      color: #1e293b;
+      color: #d6e5ff;
+      border: 1px solid #2f405a;
     }
 
     .qa-item .a .highlight {
-      background: #fef9c3;
+      background: #2b3a4f;
       padding: 0.05rem 0.3rem;
       border-radius: 4px;
+      color: #ffd966;
+      font-weight: 500;
     }
 
     .footnote {
       margin-top: 2.5rem;
-      background: #f1f5f9;
+      background: #1a2332;
       padding: 0.8rem 1.5rem;
       border-radius: 40px;
       text-align: center;
-      color: #475569;
-      border: 1px solid #d1d9e6;
+      color: #a0bada;
+      border: 1px solid #2d3f56;
       font-size: 0.95rem;
     }
 
@@ -785,8 +796,6 @@
           sizes.</span>
       </div>
     </div>
-
-
 
     <!-- ========== NEXT.JS ========== -->
     <h2>⚡ Next.js</h2>
