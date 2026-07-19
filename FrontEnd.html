@@ -20,6 +20,53 @@
       line-height: 1.6;
     }
 
+    /* ===== STICKY NAVIGATION ===== */
+    .nav-menu {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0f1622;
+      border-bottom: 2px solid #2b3648;
+      padding: 0.6rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-menu .nav-title {
+      font-weight: 700;
+      color: #5f9eff;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-menu a {
+      color: #a0bada;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .nav-menu a:hover {
+      background: #1e2a3a;
+      color: #d6e6ff;
+      border-color: #2f405a;
+    }
+
+    .nav-menu .nav-emoji {
+      margin-right: 0.2rem;
+    }
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -58,6 +105,7 @@
       padding-bottom: 0.3rem;
       border-bottom: 2px dashed #2f4057;
       color: #d6e6ff;
+      scroll-margin-top: 80px;
     }
 
     h3 {
@@ -71,6 +119,7 @@
       border-radius: 0 20px 20px 0;
       border-left: 5px solid #3b82f6;
       display: inline-block;
+      scroll-margin-top: 80px;
     }
 
     .qa-grid {
@@ -151,6 +200,38 @@
       font-size: 0.95rem;
     }
 
+    /* ===== BACK TO TOP BUTTON ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: #2563eb;
+      transform: scale(1.05);
+    }
+
     @media (max-width: 720px) {
       .container {
         padding: 1.2rem;
@@ -169,11 +250,60 @@
       .qa-item .a {
         font-size: 0.93rem;
       }
+
+      .nav-menu {
+        padding: 0.4rem 0.8rem;
+        gap: 0.3rem 0.5rem;
+        border-radius: 8px;
+      }
+
+      .nav-menu a {
+        font-size: 0.7rem;
+        padding: 0.1rem 0.4rem;
+      }
+
+      .nav-menu .nav-title {
+        font-size: 0.75rem;
+        width: 100%;
+        margin-bottom: 0.2rem;
+      }
+
+      .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- ===== STICKY NAVIGATION MENU ===== -->
+  <nav class="nav-menu" id="topNav">
+    <span class="nav-title">📑 Quick Jump</span>
+    <a href="#js-ts"><span class="nav-emoji">📘</span>JS/TS</a>
+    <a href="#nodejs"><span class="nav-emoji">🟢</span>Node.js</a>
+    <a href="#redis"><span class="nav-emoji">🔴</span>Redis</a>
+    <a href="#mongodb"><span class="nav-emoji">🍃</span>MongoDB</a>
+    <a href="#postgresql"><span class="nav-emoji">🐘</span>PostgreSQL</a>
+    <a href="#nuxt-vue"><span class="nav-emoji">🟢</span>Nuxt/Vue</a>
+    <a href="#vue"><span class="nav-emoji">🟢</span>Vue.js</a>
+    <a href="#nextjs"><span class="nav-emoji">⚡</span>Next.js</a>
+    <a href="#react"><span class="nav-emoji">⚛️</span>React</a>
+    <a href="#nestjs"><span class="nav-emoji">🦁</span>NestJS</a>
+    <a href="#rest"><span class="nav-emoji">🌐</span>REST</a>
+    <a href="#db"><span class="nav-emoji">🗄️</span>DB</a>
+    <a href="#auth"><span class="nav-emoji">🔐</span>Auth</a>
+    <a href="#docker"><span class="nav-emoji">🐳</span>Docker</a>
+    <a href="#git"><span class="nav-emoji">📦</span>Git</a>
+    <a href="#security"><span class="nav-emoji">🛡️</span>Security</a>
+    <a href="#architecture"><span class="nav-emoji">🧠</span>Architecture</a>
+    <a href="#behavioral"><span class="nav-emoji">🧑‍💻</span>Behavioral</a>
+  </nav>
+
   <div class="container">
 
     <h1>
@@ -182,7 +312,7 @@
     </h1>
 
     <!-- ========== JS / TS ========== -->
-    <h2>📘 JavaScript / TypeScript</h2>
+    <h2 id="js-ts">📘 JavaScript / TypeScript</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">var, let and const?</span>
@@ -273,91 +403,404 @@
       </div>
       <div class="qa-item">
         <span class="q">Utility Types?</span>
-        <span class="a"><strong>Partial</strong>: makes all properties optional. <strong>Required</strong>: makes all
-          properties required. <strong>Pick&lt;T, K&gt;</strong>: selects a subset of properties. <strong>Omit&lt;T,
-            K&gt;</strong>: removes properties. <strong>Record&lt;K, T&gt;</strong>: defines a key‑value pair type.
+        <span class="a">
+          <strong>Partial</strong>: makes all properties optional.
+          <strong>Required</strong>: makes all properties required.
+          <strong>Pick&lt;T, K&gt;</strong>: selects a subset of properties.
+          <strong>Omit&lt;T, K&gt;</strong>: removes properties.
+          <strong>Record&lt;K, T&gt;</strong>: defines a key‑value pair type.
           <strong>Readonly</strong>: makes all properties read‑only. These are built‑in mapped types that help transform
-          existing types without duplication.</span>
-      </div>
-      <h2>🔄 Proxy in JavaScript</h2>
-      <div class="qa-grid">
-        <div class="qa-item">
-          <span class="q">What is a Proxy in JavaScript?</span>
-          <span class="a">A Proxy is an object that <span class="highlight">wraps another object (target)</span> and
-            intercepts fundamental operations on it, such as property access, assignment, enumeration, function
-            invocation, etc. It allows you to define custom behavior for these operations using <strong>traps</strong>
-            (handler methods). Proxies are part of ES6 and are used for meta‑programming, validation, logging, and
-            reactive programming.</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">What are Proxy traps?</span>
-          <span class="a">Traps are <span class="highlight">handler methods</span> that intercept operations on the
-            target object. Common traps include: <code>get</code> (property access), <code>set</code> (property
-            assignment), <code>has</code> (<code>in</code> operator), <code>deleteProperty</code> (<code>delete</code>),
-            <code>apply</code> (function call), <code>construct</code> (<code>new</code>), <code>ownKeys</code>
-            (<code>Object.keys()</code>), and <code>getPrototypeOf</code> / <code>setPrototypeOf</code>. Each trap
-            allows you to customize the default behavior.</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">How do you create a Proxy?</span>
-          <span class="a">You create a Proxy with <code>new Proxy(target, handler)</code> where <code>target</code> is
-            the object being proxied, and <code>handler</code> is an object containing traps. Example:
-            <code>const p = new Proxy({}, { get: (obj, prop) => prop in obj ? obj[prop] : 'default' });</code> This
-            returns <code>'default'</code> for missing properties.</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">Use cases for Proxy?</span>
-          <span class="a">Proxies are used for: <strong>validation</strong> (validate data before setting),
-            <strong>logging</strong> (log property access), <strong>reactive programming</strong> (like Vue.js
-            reactivity), <strong>memoization</strong> (cache results), <strong>access control</strong> (restrict
-            property access), <strong>revocable proxies</strong> (temporarily disable access), and <strong>API
-              mocking</strong> or <strong>virtual objects</strong> (lazy loading).</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">What is a revocable Proxy?</span>
-          <span class="a">A <strong>revocable Proxy</strong> is created with
-            <code>Proxy.revocable(target, handler)</code>. It returns an object with two properties: <code>proxy</code>
-            (the Proxy instance) and <code>revoke</code> (a function). When <code>revoke()</code> is called, the proxy
-            is <span class="highlight">completely disabled</span> — any operation on it will throw a
-            <code>TypeError</code>. This is useful for when you need to grant temporary access and then revoke
-            it.</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">Proxy vs. Reflect API?</span>
-          <span class="a"><strong>Proxy</strong> intercepts operations, while <strong>Reflect</strong> is a built‑in
-            object that provides <span class="highlight">default behavior</span> for the same operations. They are often
-            used together — inside a trap, you call <code>Reflect.get()</code>, <code>Reflect.set()</code>, etc. to
-            implement the default behavior. This combination allows you to add custom logic while still preserving the
-            original behavior when needed.</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">Can you proxy a function?</span>
-          <span class="a">Yes, you can proxy functions using the <code>apply</code> and <code>construct</code> traps.
-            <code>apply</code> intercepts function calls, and <code>construct</code> intercepts <code>new</code> calls.
-            This allows you to add logging, caching, or argument validation to functions. Example:
-            <code>new Proxy(() => {}, { apply: (target, thisArg, args) => { console.log('called'); return target(...args); } });</code></span>
-        </div>
-        <div class="qa-item">
-          <span class="q">What are the limitations of Proxy?</span>
-          <span class="a">Proxies have some limitations: <strong>performance overhead</strong> (they are slower than
-            direct access), <strong>cannot proxy all operations</strong> (e.g., <code>==</code> comparison falls back to
-            the target), <strong>not available in older browsers</strong> (requires ES6), and <strong>no native support
-              for proxying built‑in objects</strong> like <code>Date</code> or <code>Array</code> fully (some internal
-            slots are not intercepted). Also, <code>Object.isFrozen()</code> and <code>Object.seal()</code> on a proxy
-            affect the target, not the proxy itself.</span>
-        </div>
-        <div class="qa-item">
-          <span class="q">How does Vue.js use Proxies?</span>
-          <span class="a">Vue.js 3 uses <strong>Proxies</strong> for its reactivity system. Instead of using
-            <code>Object.defineProperty</code> (Vue 2), Vue 3 creates a Proxy that intercepts <code>get</code> and
-            <code>set</code> operations on reactive objects. This allows tracking dependencies when properties are
-            accessed (<code>get</code>) and triggering updates when properties are assigned (<code>set</code>). Proxies
-            also handle dynamic property addition and deletion, which was a limitation in Vue 2.</span>
-        </div>
+          existing types without duplication.
+          <br><br>
+          <strong>Examples:</strong><br>
+          <code
+            style="font-size: 0.75em;">Partial&lt;{ name: string; age: number }&gt; // { name?: string; age?: number }</code><br>
+          <code
+            style="font-size: 0.75em;">Required&lt;{ name?: string; age?: number }&gt; // { name: string; age: number }</code><br>
+          <code
+            style="font-size: 0.70em;">Pick&lt;{ name: string; age: number; email: string }, 'name' | 'age'&gt; // { name: string; age: number }</code><br>
+          <code
+            style="font-size: 0.75em;">Omit&lt;{ name: string; age: number; email: string }, 'email'&gt; // { name: string; age: number }</code><br>
+          <code
+            style="font-size: 0.75em;">Record&lt;'id' | 'name', string&gt; // { id: string; name: string }</code><br>
+          <code
+            style="font-size: 0.75em;">Readonly&lt;{ name: string; age: number }&gt; // { readonly name: string; readonly age: number }</code>
+        </span>
       </div>
     </div>
+
+    <!-- ========== NODE.JS ========== -->
+    <h2 id="nodejs">🟢 Node.js</h2>
+    <div class="qa-grid">
+      <div class="qa-item">
+        <span class="q">What is Node.js?</span>
+        <span class="a">Node.js is a <span class="highlight">JavaScript runtime</span> built on Chrome's V8 engine. It
+          allows JavaScript to run on the server side, enabling full‑stack development with a single language. Node.js
+          is event‑driven, non‑blocking, and uses an asynchronous I/O model, making it efficient for real‑time
+          applications and APIs.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is the event loop in Node.js?</span>
+        <span class="a">The event loop is what allows Node.js to perform non‑blocking I/O operations despite being
+          single‑threaded. It <span class="highlight">offloads operations to the system kernel</span> whenever possible.
+          The event loop has phases: timers, pending callbacks, idle/prepare, poll, check, and close callbacks. It
+          processes the microtask queue (Promises) between each phase.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">setTimeout vs setImmediate?</span>
+        <span class="a"><code>setTimeout</code> schedules a callback after a minimum delay. <code>setImmediate</code>
+          runs the callback immediately after the current event loop phase (in the check phase). In the main module,
+          <code>setImmediate</code> often runs before <code>setTimeout(0)</code> due to the event loop's order.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What are streams in Node.js?</span>
+        <span class="a">Streams are <span class="highlight">objects that handle streaming data</span> in chunks. Types:
+          <strong>Readable</strong>, <strong>Writable</strong>, <strong>Duplex</strong>, and <strong>Transform</strong>.
+          They're useful for processing large files without loading everything into memory. Streams can be piped
+          together using the <code>pipe()</code> method.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is the <code>cluster</code> module?</span>
+        <span class="a">The <code>cluster</code> module allows you to <span class="highlight">create child
+            processes</span> that share the same server port, enabling Node.js to take advantage of multi‑core systems.
+          The master process distributes incoming connections among worker processes for improved performance.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">fork vs spawn?</span>
+        <span class="a"><code>spawn</code> launches a new process with the given command. <code>fork</code> is a special
+          case that <span class="highlight">creates a Node.js process</span> and establishes an IPC channel, allowing
+          parent and child to send messages to each other using <code>send()</code> and
+          <code>on('message')</code>.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">require vs import?</span>
+        <span class="a"><code>require()</code> is CommonJS, loads modules synchronously. <code>import</code> is ES
+          Module syntax, which is <span class="highlight">asynchronous and static</span>. ES modules are recommended for
+          modern codebases due to better tree‑shaking. Node.js supports both using <code>"type": "module"</code> in
+          <code>package.json</code>.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Express middleware?</span>
+        <span class="a">Middleware in Express are <span class="highlight">functions with access to request/response
+            objects</span>. They can execute code, modify the request/response, end the request, or call
+          <code>next()</code>. Common middleware: <code>express.json()</code>, <code>cors</code>, and logging
+          middleware.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>process.nextTick</code>?</span>
+        <span class="a"><code>process.nextTick()</code> schedules a callback to be <span class="highlight">executed in
+            the current event loop phase</span>, before the next phase begins. It's similar to <code>setImmediate</code>
+          but with higher priority — <code>nextTick</code> callbacks run before any I/O or timers.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What are <code>EventEmitter</code> and <code>events</code>?</span>
+        <span class="a">The <code>events</code> module provides the <code>EventEmitter</code> class, the <span
+            class="highlight">core event system</span> in Node.js. It allows objects to emit named events and register
+          listeners. Many built‑in modules extend <code>EventEmitter</code> for decoupled communication.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>pm2</code>?</span>
+        <span class="a"><code>pm2</code> is a <span class="highlight">production process manager</span> for Node.js
+          applications. It keeps apps running forever, handles graceful reloads, provides monitoring, logs, and
+          clustering. It can start, stop, restart processes, and supports load balancing across multiple CPU
+          cores.</span>
+      </div>
+    </div>
+
+    <!-- ========== REDIS ========== -->
+    <h2 id="redis">🔴 Redis</h2>
+    <div class="qa-grid">
+      <div class="qa-item">
+        <span class="q">What is Redis?</span>
+        <span class="a">Redis (Remote Dictionary Server) is an <span class="highlight">in‑memory data structure
+            store</span> used as a database, cache, message broker, and streaming engine. It supports various data
+          structures (strings, hashes, lists, sets, sorted sets, streams) with sub‑millisecond latency. Used for
+          caching, session management, rate limiting, and real‑time analytics.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What data structures does Redis support?</span>
+        <span class="a">Redis supports: <strong>String</strong> (key‑value), <strong>Hash</strong> (field‑value pairs),
+          <strong>List</strong> (ordered), <strong>Set</strong> (unique, unordered), <strong>Sorted Set</strong> (unique
+          with scores), <strong>Stream</strong> (log‑like), <strong>Bitmaps</strong>, <strong>HyperLogLogs</strong>, and
+          <strong>Geospatial</strong> indexes.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis caching?</span>
+        <span class="a">Redis caching stores frequently accessed data in memory to <span class="highlight">reduce
+            database load</span> and improve response times. Common patterns: <strong>cache‑aside</strong> (check cache
+          first, fallback to DB), <strong>read‑through</strong>, <strong>write‑through</strong>, and
+          <strong>write‑behind</strong>.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis TTL?</span>
+        <span class="a">TTL (Time‑To‑Live) is the <span class="highlight">expiration time</span> of a Redis key. After
+          TTL expires, the key is automatically deleted. Essential for caching to prevent stale data. Set TTL using
+          <code>EXPIRE key seconds</code> or <code>SET key value EX seconds</code>.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis persistence?</span>
+        <span class="a">Redis provides persistence to <span class="highlight">save data to disk</span> for recovery. Two
+          options: <strong>RDB</strong> (point‑in‑time snapshots) and <strong>AOF</strong> (Append‑Only File, logs every
+          write). RDB is faster for recovery but may lose recent data; AOF is more durable with higher overhead.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis Pub/Sub?</span>
+        <span class="a">Redis Pub/Sub (Publish‑Subscribe) is a <span class="highlight">messaging pattern</span> where
+          publishers send messages to channels and subscribers receive them. Used for real‑time notifications, chat, and
+          event‑driven architectures. Messages are not stored if no subscriber is listening (fire‑and‑forget).</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis Sentinel?</span>
+        <span class="a">Redis Sentinel is a <span class="highlight">high‑availability solution</span> for Redis. It
+          monitors Redis instances, performs automatic failover when the master fails, and provides discovery for
+          clients. Sentinel acts as a configuration provider for clients to find the current master.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis Cluster?</span>
+        <span class="a">Redis Cluster is a <span class="highlight">distributed Redis implementation</span> that
+          automatically shards data across multiple nodes. Uses hash slots (16384 slots) to determine which node holds a
+          key. Provides high availability and scalability with automatic failover.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>ioredis</code>?</span>
+        <span class="a"><code>ioredis</code> is a <span class="highlight">high‑performance Redis client</span> for
+          Node.js. Supports: promises/async, cluster mode, Sentinel, streaming, and Lua scripting. Widely used in NestJS
+          and Node.js applications. Example:
+          <code>const redis = new Redis({ host: 'localhost', port: 6379 });</code></span>
+      </div>
+      <div class="qa-item">
+        <span class="q">How to use Redis for session management?</span>
+        <span class="a">Redis is ideal for sessions because it's fast, supports TTL, and can be shared across server
+          instances. In Express, use <code>connect‑redis</code> with <code>express‑session</code>. In NestJS, use
+          <code>@nestjs/session</code> with Redis store. Enables stateless, scalable session handling in distributed
+          systems.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">How to use Redis for rate limiting?</span>
+        <span class="a">Rate limiting with Redis uses <span class="highlight">sliding window or token bucket</span>
+          algorithms. Store a counter per user/IP with TTL, increment on each request, reject if limit exceeded. Redis
+          atomic operations (<code>INCR</code> and <code>EXPIRE</code>) ensure accuracy. Use
+          <code>@nestjs/throttler</code> with Redis store.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is Redis Lua scripting?</span>
+        <span class="a">Redis Lua scripting allows <span class="highlight">complex operations atomically</span> on the
+          server side. Lua scripts combine multiple Redis commands into a single atomic unit, reducing network round
+          trips and ensuring consistency. Useful for implementing custom algorithms and transactions.</span>
+      </div>
+    </div>
+
+    <!-- ========== MONGODB ========== -->
+    <h2 id="mongodb">🍃 MongoDB</h2>
+    <div class="qa-grid">
+      <div class="qa-item">
+        <span class="q">What is MongoDB?</span>
+        <span class="a">MongoDB is a <span class="highlight">document‑oriented NoSQL database</span> that stores data as
+          JSON‑like documents (BSON). It's schema‑flexible, horizontally scalable, and supports rich querying, indexing,
+          and aggregation. Used for unstructured data, rapid prototyping, and high‑write applications.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">MongoDB vs SQL databases?</span>
+        <span class="a"><strong>MongoDB</strong> is schema‑less, stores data as documents, scales horizontally via
+          sharding, and is good for unstructured data. <strong>SQL</strong> databases have rigid schemas, use
+          tables/rows, scale vertically, and excel at complex joins and ACID transactions. Choose MongoDB for
+          flexibility and scale, SQL for relational data and strict consistency.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is a collection in MongoDB?</span>
+        <span class="a">A collection is a <span class="highlight">group of documents</span> in MongoDB, similar to a
+          table in SQL databases. Unlike SQL, collections don't enforce a schema — each document can have different
+          fields and structures. This provides flexibility for evolving data models.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is a document in MongoDB?</span>
+        <span class="a">A document is a <span class="highlight">record in MongoDB</span>, stored as BSON (binary JSON).
+          It's a set of key‑value pairs, similar to JSON objects. Documents can contain nested objects, arrays, and
+          complex data types. Each document has a unique <code>_id</code> field (ObjectId by default).</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is MongoDB indexing?</span>
+        <span class="a">Indexing in MongoDB <span class="highlight">improves query performance</span> by creating data
+          structures (B‑trees) for frequently queried fields. Types: <strong>single field</strong>,
+          <strong>compound</strong> (multiple fields), <strong>text</strong> (full‑text search),
+          <strong>geospatial</strong>, and <strong>hashed</strong>. Indexes have trade‑offs — they speed up reads but
+          slow down writes and use storage.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is MongoDB aggregation?</span>
+        <span class="a">The <span class="highlight">aggregation pipeline</span> is MongoDB's powerful data processing
+          framework. It processes documents through stages: <code>$match</code> (filter), <code>$group</code> (group
+          by), <code>$project</code> (select fields), <code>$sort</code>, <code>$lookup</code> (join with other
+          collections), <code>$unwind</code>, and <code>$addFields</code>. It's used for analytics, reporting, and
+          complex transformations.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is MongoDB sharding?</span>
+        <span class="a">Sharding is MongoDB's <span class="highlight">horizontal scaling method</span> that distributes
+          data across multiple servers (shards). Each shard holds a subset of data based on a <strong>shard
+            key</strong>. It enables handling large datasets and high throughput. Components: <strong>shards</strong>
+          (data), <strong>mongos</strong> (query router), and <strong>config servers</strong> (metadata).</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is MongoDB replica set?</span>
+        <span class="a">A replica set in MongoDB is a <span class="highlight">group of MongoDB instances</span> that
+          maintain the same dataset for high availability and redundancy. One primary node (accepts writes) and multiple
+          secondary nodes (replicate data). If the primary fails, a secondary is automatically elected as the new
+          primary.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>mongoose</code>?</span>
+        <span class="a"><code>mongoose</code> is the <span class="highlight">most popular ODM (Object Document
+            Mapper)</span> for MongoDB in Node.js. It provides schema validation, type casting, middleware (hooks), and
+          query building. Example:
+          <code>const User = mongoose.model('User', new Schema({ name: String, email: String }));</code></span>
+      </div>
+      <div class="qa-item">
+        <span class="q">MongoDB vs Mongoose?</span>
+        <span class="a"><strong>MongoDB</strong> is the database itself. <strong>Mongoose</strong> is a Node.js ODM
+          library that provides schema validation, middleware, and a higher‑level API for interacting with MongoDB.
+          Mongoose adds structure and validation on top of the flexible MongoDB documents.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>populate</code> in Mongoose?</span>
+        <span class="a"><code>populate()</code> in Mongoose is used for <span class="highlight">referencing
+            documents</span> from other collections. It automatically replaces a document's path with the actual
+          document(s) from the referenced collection. Example: <code>User.find().populate('posts')</code> to populate
+          user's posts array with full post documents.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What are MongoDB transactions?</span>
+        <span class="a">MongoDB supports <span class="highlight">multi‑document ACID transactions</span> (since version
+          4.0). They allow operations across multiple documents, collections, and databases to be atomic. Useful for
+          financial applications where data consistency is critical. Use with <code>session.startTransaction()</code>
+          and <code>session.commitTransaction()</code>.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>$lookup</code>?</span>
+        <span class="a"><code>$lookup</code> is an aggregation stage that <span class="highlight">performs a left outer
+            join</span> with another collection. It's similar to SQL JOINs. Example:
+          <code>{ $lookup: { from: 'orders', localField: 'userId', foreignField: '_id', as: 'orders' } }</code> to fetch
+          a user's orders.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">MongoDB vs PostgreSQL?</span>
+        <span class="a"><strong>MongoDB</strong> for: flexible schemas, rapid iteration, large volumes of unstructured
+          data, horizontal scaling, and high write throughput. <strong>PostgreSQL</strong> for: strict schemas, complex
+          relationships, ACID transactions, advanced querying, and when data integrity is critical. Choose based on data
+          model and requirements.</span>
+      </div>
+    </div>
+
+    <!-- ========== POSTGRESQL ========== -->
+    <h2 id="postgresql">🐘 PostgreSQL</h2>
+    <div class="qa-grid">
+      <div class="qa-item">
+        <span class="q">What is PostgreSQL?</span>
+        <span class="a">PostgreSQL is a <span class="highlight">powerful, open‑source object‑relational database</span>
+          with strong ACID compliance, advanced features, and excellent performance. It supports JSONB, full‑text
+          search, custom types, extensions (PostGIS, pgvector), and complex queries. It's my default choice for
+          transactional, relational data.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">PostgreSQL vs MySQL?</span>
+        <span class="a"><strong>PostgreSQL</strong> is more feature‑rich with JSONB support, advanced indexing (GIN,
+          GiST, BRIN), custom operators, and better concurrency handling. <strong>MySQL</strong> is simpler, often
+          faster for simple reads, and has wider hosting support. PostgreSQL is preferred for complex queries, data
+          integrity, and modern applications.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is JSONB in PostgreSQL?</span>
+        <span class="a">JSONB is a <span class="highlight">binary JSON data type</span> in PostgreSQL that stores JSON
+          data in a decomposed binary format. It's faster for indexing and querying than plain JSON. Supports indexing
+          (GIN), partial updates, and querying with <code>-></code>, <code>->></code>, and <code>@></code> operators.
+          Allows combining relational and document data.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What are PostgreSQL indexes?</span>
+        <span class="a">PostgreSQL supports multiple index types: <strong>B‑tree</strong> (default),
+          <strong>GIN</strong> (full‑text, arrays, JSONB), <strong>GiST</strong> (spatial, range types),
+          <strong>BRIN</strong> (large tables), <strong>Hash</strong>, and <strong>SP‑GiST</strong>. Indexes improve
+          query performance but add write overhead. Use <code>CREATE INDEX</code> and analyze query plans with
+          <code>EXPLAIN</code>.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is a PostgreSQL view?</span>
+        <span class="a">A view is a <span class="highlight">virtual table</span> based on a query result. It simplifies
+          complex queries, provides security (restrict columns), and abstracts underlying schema. <strong>Materialized
+            views</strong> are physically stored and can be refreshed, providing faster access for expensive
+          queries.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is a PostgreSQL trigger?</span>
+        <span class="a">A trigger is a <span class="highlight">function that automatically executes</span> before or
+          after events like INSERT, UPDATE, DELETE. Used for auditing, data validation, updating timestamps, and
+          enforcing business logic. Defined using <code>CREATE TRIGGER</code> and a PL/pgSQL function.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is a PostgreSQL function/procedure?</span>
+        <span class="a"><strong>Functions</strong> return a value and can be used in queries (like
+          <code>SELECT my_function()</code>). They can be written in PL/pgSQL, Python, etc. <strong>Procedures</strong>
+          (PostgreSQL 11+) don't return values but can start/commit transactions. Used for complex business logic, data
+          transformations, and automation.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is PostgreSQL full‑text search?</span>
+        <span class="a">Full‑text search in PostgreSQL uses <span class="highlight"><code>tsvector</code> and
+            <code>tsquery</code></span> for efficient text searching. Supports ranking, stemming, and multiple
+          languages. Example:
+          <code>SELECT * FROM articles WHERE to_tsvector('english', content) @@ to_tsquery('english', 'search & terms');</code></span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is PostgreSQL isolation level?</span>
+        <span class="a">PostgreSQL supports four isolation levels: <strong>Read Uncommitted</strong> (not allowed),
+          <strong>Read Committed</strong> (default), <strong>Repeatable Read</strong>, and
+          <strong>Serializable</strong>. Higher levels provide stronger consistency but may reduce concurrency. Choose
+          based on your application's consistency requirements.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is MVCC in PostgreSQL?</span>
+        <span class="a">MVCC (Multi‑Version Concurrency Control) allows <span class="highlight">multiple users to read
+            and write</span> simultaneously without blocking. PostgreSQL keeps multiple versions of rows. Readers see a
+          consistent snapshot, writers create new versions. This eliminates read‑write conflicts and enables high
+          concurrency.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>EXPLAIN</code> in PostgreSQL?</span>
+        <span class="a"><code>EXPLAIN</code> shows the <span class="highlight">query execution plan</span> — how
+          PostgreSQL plans to run a query. Use <code>EXPLAIN ANALYZE</code> to see actual runtime and row counts.
+          Essential for performance tuning, identifying slow joins, missing indexes, and inefficient scans.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What are PostgreSQL extensions?</span>
+        <span class="a">Extensions add extra functionality to PostgreSQL. Popular ones: <strong>PostGIS</strong>
+          (geospatial data), <strong>pgvector</strong> (vector similarity for AI/ML), <strong>pgcrypto</strong>
+          (cryptographic functions), <strong>UUID‑osp</strong> (UUID generation), and <strong>hstore</strong> (key‑value
+          storage). Use <code>CREATE EXTENSION</code> to add them.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">How to optimize PostgreSQL performance?</span>
+        <span class="a">Performance optimization: use <strong>indexes</strong> on queried columns,
+          <strong>analyze</strong> and <strong>vacuum</strong> regularly, tune <strong>configuration parameters</strong>
+          (shared_buffers, work_mem), use <strong>connection pooling</strong> (PgBouncer), partition large tables, write
+          efficient queries, and monitor with pg_stat_statements.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What is <code>pgAdmin</code>?</span>
+        <span class="a"><code>pgAdmin</code> is the <span class="highlight">most popular administration tool</span> for
+          PostgreSQL. It provides a graphical interface for managing databases, running queries, viewing schemas,
+          monitoring performance, and backup/restore. Essential for database administration and debugging.</span>
+      </div>
+      <div class="qa-item">
+        <span class="q">What are connection pools in PostgreSQL?</span>
+        <span class="a">Connection pools maintain a <span class="highlight">cache of database connections</span> to
+          reuse, reducing the overhead of establishing new connections. Tools: <strong>PgBouncer</strong> (lightweight),
+          <strong>pgpool‑II</strong> (with load balancing). In Node.js, use <code>pg.Pool</code> from the
+          <code>pg</code> package for built‑in pooling.</span>
+      </div>
+    </div>
+
     <!-- ========== NUXT & VUE ========== -->
-    <h2>🟢 Nuxt & Vue</h2>
+    <h2 id="nuxt-vue">🟢 Nuxt & Vue</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">What is Nuxt?</span>
@@ -507,8 +950,9 @@
             hosting</strong> (via <code>output/</code>).</span>
       </div>
     </div>
+
     <!-- ========== VUE.JS ========== -->
-    <h2>🟢 Vue.js</h2>
+    <h2 id="vue">🟢 Vue.js</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">What is Vue.js?</span>
@@ -798,7 +1242,7 @@
     </div>
 
     <!-- ========== NEXT.JS ========== -->
-    <h2>⚡ Next.js</h2>
+    <h2 id="nextjs">⚡ Next.js</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">App Router?</span>
@@ -912,7 +1356,7 @@
     </div>
 
     <!-- ========== REACT ========== -->
-    <h2>⚛️ React</h2>
+    <h2 id="react">⚛️ React</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">Why Virtual DOM?</span>
@@ -975,7 +1419,7 @@
     </div>
 
     <!-- ========== NESTJS ========== -->
-    <h2>🦁 NestJS</h2>
+    <h2 id="nestjs">🦁 NestJS</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">Why NestJS?</span>
@@ -1111,7 +1555,7 @@
     </div>
 
     <!-- ========== REST ========== -->
-    <h2>🌐 REST API</h2>
+    <h2 id="rest">🌐 REST API</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">REST?</span>
@@ -1183,7 +1627,7 @@
     </div>
 
     <!-- ========== DATABASE ========== -->
-    <h2>🗄️ Database</h2>
+    <h2 id="db">🗄️ Database</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">SQL vs NoSQL?</span>
@@ -1321,7 +1765,7 @@
     </div>
 
     <!-- ========== AUTH ========== -->
-    <h2>🔐 Authentication</h2>
+    <h2 id="auth">🔐 Authentication</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">JWT?</span>
@@ -1413,7 +1857,7 @@
     </div>
 
     <!-- ========== DOCKER ========== -->
-    <h2>🐳 Docker</h2>
+    <h2 id="docker">🐳 Docker</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">Docker?</span>
@@ -1474,7 +1918,7 @@
     </div>
 
     <!-- ========== GIT ========== -->
-    <h2>📦 Git</h2>
+    <h2 id="git">📦 Git</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">Git Flow?</span>
@@ -1522,7 +1966,7 @@
     </div>
 
     <!-- ========== SECURITY ========== -->
-    <h2>🛡️ Security (OWASP)</h2>
+    <h2 id="security">🛡️ Security (OWASP)</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">OWASP Top 10?</span>
@@ -1573,7 +2017,7 @@
     </div>
 
     <!-- ========== ARCHITECTURE ========== -->
-    <h2>🧠 Architecture</h2>
+    <h2 id="architecture">🧠 Architecture</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">MVC?</span>
@@ -1625,7 +2069,7 @@
     </div>
 
     <!-- ========== BEHAVIORAL ========== -->
-    <h2>🧑‍💻 Behavioral Questions</h2>
+    <h2 id="behavioral">🧑‍💻 Behavioral Questions</h2>
     <div class="qa-grid">
       <div class="qa-item">
         <span class="q">Why leave current company?</span>
@@ -1817,6 +2261,43 @@
     </div>
 
   </div>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+  <script>
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const navHeight = document.querySelector('.nav-menu').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 10;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>
