@@ -277,6 +277,7 @@
         <section class="section">
             <h2 class="section-title">Projects</h2>
 
+            <!-- TaskForge -->
             <div class="project-card">
                 <h3>
                     <a href="https://mmdreza21.vercel.app/" target="_blank">
@@ -287,63 +288,48 @@
 
                 <p>
                     <b>Production-ready full-stack collaboration platform</b> built with
-                    <b>Nuxt 3</b>, <b>NestJS</b>, <b>Prisma</b>, <b>PostgreSQL</b>, and <b>Redis</b>,
-                    featuring <b>secure authentication</b>,
-                    <b>real-time collaboration</b>,
-                    an <b>AI assistant</b>,
-                    and an embedded <b>Unity WebGL experience</b>.
+                    <b>Nuxt 3</b>, <b>NestJS</b>, <b>Prisma</b>, <b>PostgreSQL</b>, and
+                    <b>Redis</b>, featuring secure authentication, real-time collaboration,
+                    AI-powered assistance, and an embedded Unity WebGL experience.
                 </p>
 
                 <ul>
                     <li>
-                        <b>Authentication & Security</b> – Implemented JWT authentication,
-                        email verification, password reset flows, and RBAC with
-                        Admin/User roles.
+                        <b>Architecture & Security</b> – Designed scalable REST APIs,
+                        normalized PostgreSQL schema with Prisma, JWT authentication,
+                        email verification, password recovery, and RBAC for Admin/User roles.
                     </li>
 
                     <li>
-                        <b>Backend Architecture</b> – Designed scalable REST APIs with
-                        a normalized Prisma PostgreSQL schema and real-time WebSocket
-                        communication.
+                        <b>Real-Time Collaboration</b> – Engineered a Socket.IO communication
+                        layer with Redis-backed persistent messaging, online presence,
+                        private conversations, and chat history caching.
                     </li>
 
                     <li>
-                        <b>Real-time Chat System</b> – Built a <b>real-time chat system</b> using
-                        <b>Socket.IO</b> with <b>Redis</b> as the message store for
-                        <b>persistent chat history</b> and <b>fast retrieval</b>.
-                        Implemented <b>private messaging</b>, <b>online presence tracking</b>,
-                        and <b>chat history caching</b> with <b>Redis lists</b>.
+                        <b>AI Assistant</b> – Integrated Groq's Llama 3.3 70B model using
+                        Server-Sent Events (SSE) for real-time streaming AI responses.
                     </li>
 
                     <li>
-                        <b>AI Integration</b> – Built an intelligent assistant using
-                        Groq's Llama 3.3 70B model with Server-Sent Events (SSE) for
-                        streaming responses.
+                        <b>Interactive Platform</b> – Embedded a Unity WebGL game to provide
+                        interactive experiences directly inside the collaboration platform.
                     </li>
 
                     <li>
-                        <b>Interactive Experience</b> – Embedded a Unity WebGL game
-                        directly into the platform for engaging user interactions.
-                    </li>
-
-                    <li>
-                        <b>Full-Cycle Development</b> – Developed responsive Nuxt 3
-                        frontend with secure API integration and deployed on
-                        Vercel (Frontend) and Render (Backend).
+                        <b>Deployment</b> – Dockerized the application and deployed the
+                        frontend on Vercel and backend on Render with secure API integration.
                     </li>
                 </ul>
 
                 <p>
                     <strong>Tech Stack:</strong>
-                    Nuxt 3 · NestJS · TypeScript · Prisma · PostgreSQL ·
-                    Redis · JWT · WebSockets · Socket.IO · SSE · Groq API ·
-                    Llama 3.3 · Unity WebGL · Docker · Vercel · Render
+                    Nuxt 3 · NestJS · TypeScript · Prisma · PostgreSQL · Redis ·
+                    JWT · Socket.IO · WebSockets · SSE · Groq API · Llama 3.3 ·
+                    Unity WebGL · Docker · Vercel · Render
                 </p>
 
                 <p>
-                    <!-- <a href="https://mmdreza21.vercel.app/" target="_blank">
-                        🔗 Live Demo
-                    </a> -->
                     <a href="https://github.com/mmdreza21/Nestjs_prisma_task_manager" target="_blank">
                         📦 Backend
                     </a>
@@ -358,6 +344,7 @@
                 </p>
             </div>
 
+            <!-- AVADND -->
             <div class="project-card">
                 <h3>
                     <a href="https://avadnd.com/" target="_blank">
@@ -367,30 +354,89 @@
                 </h3>
 
                 <p>
-                    <b>Commercial Persian platform</b> for Dungeons & Dragons players,
-                    featuring <b>educational content</b>, <b>encyclopedic resources</b>,
-                    and <b>interactive tools</b>.
+                    <b>Commercial production platform</b> serving the Persian Dungeons &
+                    Dragons community with educational content, encyclopedic resources,
+                    and interactive tools.
                 </p>
 
                 <p>
-                    Worked as a <b>Frontend Developer</b>, building
-                    <b>scalable Vue 3 components</b>, optimizing
-                    <b>performance</b>, and improving the
-                    <b>overall user experience</b>.
+                    Worked as a <b>Frontend Developer</b>, building reusable Vue 3
+                    components, improving application performance, collaborating with
+                    backend teams, and enhancing the overall user experience across
+                    production features.
                 </p>
 
                 <p>
-                    <strong>Tech:</strong>
-                    Vue 3, Nuxt.js, TypeScript, Vuetify
+                    <strong>Tech Stack:</strong>
+                    Vue 3 · Nuxt.js · TypeScript · Vuetify
                 </p>
 
                 <p>
                     <a href="https://avadnd.com/" target="_blank">
-                        🌐 Live Website <i class="fas fa-external-link-alt"></i>
+                        🌐 Live Website
+                        <i class="fas fa-external-link-alt"></i>
                     </a>
                 </p>
             </div>
 
+            <!-- Language Learning Backend -->
+            <div class="project-card">
+                <h3>
+                    <a href="https://github.com/mmdreza21/nodejs_express_learning_project" target="_blank">
+                        Language Learning Marketplace Backend
+                        <i class="fab fa-github"></i>
+                    </a>
+                </h3>
+
+                <p>
+                    <b>Production-ready backend API</b> for a language learning marketplace
+                    connecting students, teachers, and administrators with authentication,
+                    scheduling, payments, quizzes, support, and real-time collaboration.
+                </p>
+
+                <ul>
+                    <li>
+                        <b>Backend Architecture</b> – Designed scalable REST APIs using
+                        Express.js, MongoDB, and Mongoose with modular application structure.
+                    </li>
+
+                    <li>
+                        <b>Authentication & Authorization</b> – Implemented JWT
+                        authentication and role-based access control for Student,
+                        Teacher, and Admin workflows.
+                    </li>
+
+                    <li>
+                        <b>Platform Features</b> – Developed class scheduling, booking,
+                        wallet payments, quizzes, exams, support tickets, and secure
+                        file upload functionality.
+                    </li>
+
+                    <li>
+                        <b>Real-Time Communication</b> – Built live club discussions,
+                        messaging, and notifications using Socket.IO.
+                    </li>
+
+                    <li>
+                        <b>Testing</b> – Wrote integration tests for REST API endpoints using
+                        Jest and Supertest.
+                    </li>
+                </ul>
+
+                <p>
+                    <strong>Tech Stack:</strong>
+                    Node.js · Express · MongoDB · Mongoose · Socket.IO · JWT ·
+                    Multer · Jest · Supertest
+                </p>
+
+                <p>
+                    <a href="https://github.com/mmdreza21/nodejs_express_learning_project" target="_blank">
+                        📦 GitHub Repository
+                    </a>
+                </p>
+            </div>
+
+            <!-- Issue Tracker -->
             <div class="project-card">
                 <h3>
                     <a href="https://github.com/mmdreza21/issue-tracker-nextjs" target="_blank">
@@ -400,48 +446,26 @@
                 </h3>
 
                 <p>
-                    Full-stack issue tracking application built with <b>Next.js</b>,
-                    <b>TypeScript</b>, <b>Prisma</b>, and <b>MySQL</b>.
+                    <b>Full-stack issue management platform</b> built with Next.js,
+                    Prisma, and MySQL, featuring secure authentication, issue lifecycle
+                    management, and analytics.
                 </p>
 
                 <p>
-                    Implemented secure Google authentication, CRUD operations,
-                    issue assignment, filtering, sorting, pagination, and an
-                    analytics dashboard with responsive UI.
+                    Implemented Google authentication, complete CRUD workflows, issue
+                    assignment, filtering, sorting, pagination, validation, and a
+                    responsive analytics dashboard.
                 </p>
 
                 <p>
-                    <strong>Tech:</strong>
-                    Next.js, TypeScript, Prisma, MySQL, NextAuth,
-                    TanStack Query, Radix UI, Zod
-                </p>
-            </div>
-
-            <div class="project-card">
-                <h3>
-                    <a href="https://github.com/mmdreza21/GameHubReact" target="_blank">
-                        Game Hub – Video Game Discovery Platform
-                        <i class="fab fa-github"></i>
-                    </a>
-                </h3>
-
-                <p>
-                    Video game discovery frontend built with <b>React 19</b>, <b>TypeScript</b>, and <b>Vite</b>.
+                    <strong>Tech Stack:</strong>
+                    Next.js · TypeScript · Prisma · MySQL · NextAuth ·
+                    TanStack Query · Radix UI · Zod
                 </p>
 
                 <p>
-                    Search, filter, and sort games with responsive UI,
-                    skeleton loaders, emoji ratings, and light/dark mode.
-                </p>
-
-                <p>
-                    <strong>Tech:</strong>
-                    React, TypeScript, Vite, Chakra UI, Axios
-                </p>
-
-                <p>
-                    <a href="https://github.com/mmdreza21/GameHubReact" target="_blank">
-                        🔗 GitHub Repository <i class="fab fa-github"></i>
+                    <a href="https://github.com/mmdreza21/issue-tracker-nextjs" target="_blank">
+                        📦 GitHub Repository
                     </a>
                 </p>
             </div>
